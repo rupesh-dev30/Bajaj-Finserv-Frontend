@@ -5,7 +5,6 @@ import { useState } from "react";
 export default function Home() {
   const [fullName, setFullName] = useState("");
   const [dob, setDob] = useState("");
-  const [dataInput, setDataInput] = useState("");
   const [response, setResponse] = useState(null);
   const [error, setError] = useState("");
 
@@ -16,7 +15,7 @@ export default function Home() {
         dob: dob,
       };
 
-      const res = await fetch("http://localhost:5000/bfhl", {
+      const res = await fetch("https://bajaj-finserv-backend-t0kn.onrender.com//bfhl", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestBody),
@@ -25,7 +24,7 @@ export default function Home() {
       const result = await res.json();
       setResponse(result);
       setError("");
-    } catch (err) {
+    } catch {
       setError("Invalid JSON input");
       setResponse(null);
     }
@@ -33,14 +32,14 @@ export default function Home() {
 
   const handleGetRequest = async () => {
     try {
-      const res = await fetch("http://localhost:5000/bfhl", {
+      const res = await fetch("https://bajaj-finserv-backend-t0kn.onrender.com/bfhl", {
         method: "GET",
       });
 
       const result = await res.json();
       setResponse(result);
       setError("");
-    } catch (err) {
+    } catch {
       setError("Failed to fetch data");
       setResponse(null);
     }
