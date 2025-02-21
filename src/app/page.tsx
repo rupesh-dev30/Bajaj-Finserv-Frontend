@@ -16,7 +16,7 @@ export default function Home() {
       };
 
       const res = await fetch(
-        "https://bajaj-finserv-backend-t0kn.onrender.com//bfhl",
+        "https://bajaj-finserv-backend-t0kn.onrender.com/bfhl",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
