@@ -15,11 +15,14 @@ export default function Home() {
         dob: dob,
       };
 
-      const res = await fetch("https://bajaj-finserv-backend-t0kn.onrender.com//bfhl", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(requestBody),
-      });
+      const res = await fetch(
+        "https://bajaj-finserv-backend-t0kn.onrender.com//bfhl",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(requestBody),
+        }
+      );
 
       const result = await res.json();
       setResponse(result);
@@ -32,9 +35,12 @@ export default function Home() {
 
   const handleGetRequest = async () => {
     try {
-      const res = await fetch("https://bajaj-finserv-backend-t0kn.onrender.com/bfhl", {
-        method: "GET",
-      });
+      const res = await fetch(
+        "https://bajaj-finserv-backend-t0kn.onrender.com/bfhl",
+        {
+          method: "GET",
+        }
+      );
 
       const result = await res.json();
       setResponse(result);
